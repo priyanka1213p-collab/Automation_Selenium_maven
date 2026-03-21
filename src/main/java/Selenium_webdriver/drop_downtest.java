@@ -14,6 +14,16 @@ public static void main(String[] args) throws InterruptedException {
 	Select select = new Select(city);
 	Thread.sleep(3000);
 	
+	select.selectByVisibleText("baroda");
+	Thread.sleep(3000);
+	
+	select.selectByValue("surat");
+	Thread.sleep(3000);
+	
+	select.selectByIndex(0);
+	Thread.sleep(0);
+	
+	driver.quit();
 	
 }
 
