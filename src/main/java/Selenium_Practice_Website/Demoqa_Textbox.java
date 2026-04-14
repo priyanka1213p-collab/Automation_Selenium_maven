@@ -1,6 +1,7 @@
 package Selenium_Practice_Website;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 //import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -49,13 +50,16 @@ public static void main(String[] args) throws InterruptedException {
 	//Current Address/PA/Submit
 	driver.findElement(By.id("currentAddress")).sendKeys("House 23, Street 5, Alkapuri Area, Vadodara, Gujarat, India 390007");
 	driver.findElement(By.id("permanentAddress")).sendKeys("B180 sayaji township vadodara");
-	driver.findElement(By.id("submit")).click();
+	// Scroll + Click Submit
+	WebElement submitBtn = driver.findElement(By.id("submit"));
+	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitBtn);
 	Thread.sleep(2000);
-	
-//	String output = driver.findElement(By.id("output")).getText();
-//
-//    System.out.println("Submitted Data:");
-//    System.out.println(output);
+	((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitBtn);
+
+	// Get Output
+	String output = driver.findElement(By.id("output")).getText();
+	System.out.println("Submitted Data:");
+	System.out.println(output);
 	
 
 
@@ -64,7 +68,7 @@ public static void main(String[] args) throws InterruptedException {
     driver.quit();
 
 	
-	//Output data
+
 	
 	
 	
