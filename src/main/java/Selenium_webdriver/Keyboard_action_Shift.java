@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class Keyboard_action {
+public class Keyboard_action_Shift {
 public static void main(String[] args) {
 	
 	//webdriver is used to connect with browser
@@ -16,14 +16,21 @@ public static void main(String[] args) {
 	driver.get("https://www.facebook.com/");
 	
 	WebElement username = driver.findElement(By.name("email"));
-	Actions Builder = new Actions (driver);
-	Actions action = (Actions) Builder.moveToElement(username).click().keyDown(username,Keys.SHIFT)
-			.sendKeys(username,"hello")
-			.keyUp(username,Keys.SHIFT)
-			.doubleClick(username)
-			.contextClick()
-			.build();
-	      action.perform();
+	// Create Actions object
+    Actions a1 = new Actions(driver);
+
+    // Perform keyboard actions
+//    a1.moveToElement(username)
+//           .click()
+//           .keyDown(Keys.SHIFT)
+//           .sendKeys("hello")
+//           .keyUp(Keys.SHIFT)
+////           .doubleClick()
+////           .contextClick()
+//           .build()
+//           .perform();
+    
+    a1.click(username).keyDown(Keys.SHIFT).sendKeys("hello").keyUp(Keys.SHIFT).perform();
 			
 	
 }

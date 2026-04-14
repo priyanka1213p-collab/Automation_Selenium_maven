@@ -15,12 +15,23 @@ public class Screenshort {
 		WebDriver driver = new ChromeDriver();	
 		driver.get("https://www.facebook.com/");
 		
-		//take Screenshort
-		//take Sc reenshort and store and file
+//		//take Screenshort
+//		//take Sc reenshort and store and file
+//		
+//		File screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//		//store file at desired location
+//		FileUtils.copyFile(screenshot, new File("C:\\Users\\hp\\Downloads\\image\\facebook.png"));
 		
-		File screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		//store file at desired location
-		FileUtils.copyFile(screenshot, new File("C:\\Users\\hp\\Downloads\\image\\facebook.png"));
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File src= ts.getScreenshotAs(OutputType.FILE);
+		
+		File destination = new File ("C:\\Users\\hp\\Downloads\\image\\face.png");
+		FileUtils.copyFile(src, destination);
+		
+		
+		
+		
 	}
+	
 
 }

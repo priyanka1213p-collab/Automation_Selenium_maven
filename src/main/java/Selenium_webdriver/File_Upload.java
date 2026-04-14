@@ -10,16 +10,26 @@ public static void main(String[] args) throws InterruptedException {
 	driver.get("https://demo.guru99.com/test/upload/");
 	
 	//File Upload text
+//	WebElement file = driver.findElement(By.name("uploadfile_0"));
+//	file.sendKeys("C://Users//hp//Downloads//tops-jobfest-2026-id-card.pdf");
+//	Thread.sleep(3000);
+//	WebElement checkbox=driver.findElement(By.name("terms"));
+//	checkbox.click();
+//	Thread.sleep(3000);
+//	WebElement submit=driver.findElement(By.name("send"));
+//	submit.click();
+//	Thread.sleep(3000);
+//	driver.quit();
+	
+	
+	//File uploading 
 	WebElement file = driver.findElement(By.name("uploadfile_0"));
-	file.sendKeys("C://Users//hp//Downloads//tops-jobfest-2026-id-card.pdf");
-	Thread.sleep(3000);
-	WebElement checkbox=driver.findElement(By.name("terms"));
-	checkbox.click();
-	Thread.sleep(3000);
-	WebElement submit=driver.findElement(By.name("send"));
-	submit.click();
-	Thread.sleep(3000);
-	driver.quit();
+	file.sendKeys("C:\\Users\\hp\\Downloads\\selenium_notes_java_webdriver.pdf");
+	System.out.println("file uploaded successfuly");
+	driver.findElement(By.name("terms")).click();
+	Thread.sleep(2000);
+	driver.findElement(By.name("send")).click();
+	Thread.sleep(2000);
 }
 }
 	
